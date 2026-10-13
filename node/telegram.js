@@ -1,4 +1,4 @@
-const TOKEN = process.env.TELEGRAM_TOKEN || '205239387:AAGomE3fye1WypZe14-lLqxf--RNjgIcrqE';
+const TOKEN = process.env.TELEGRAM_TOKEN || 'ENTER_TOKEN_HERE';
 const TelegramBot = require('node-telegram-bot-api');
 const request = require('request');
 const options = {
