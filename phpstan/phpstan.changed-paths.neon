@@ -1,0 +1,3 @@
+parameters:
+    paths:
+        - routes/vapi.php

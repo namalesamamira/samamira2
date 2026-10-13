@@ -1,0 +1,18 @@
+.tags{
+	font-size: 12px;
+	line-height: 24px;
+	.tagicon{
+		display: block;
+		overflow: hidden;
+		width:20px;
+		height:20px;
+		float:left;
+		margin-right: 5px;
+		&::before{
+			content:"";
+			.svg-sprite();
+			.svg-close();
+			overflow: hidden;
+		}
+	}
+}

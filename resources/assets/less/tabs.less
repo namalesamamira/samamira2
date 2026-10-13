@@ -1,0 +1,41 @@
+/* [NAVIGATION] */
+#tab_links span.tab_link,
+#tab_links span.tab_link2 {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* [CONTENTS] */
+#tab_contents {
+    padding: 15px;
+    div.tab_content,div.mode_tab_content{
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
+
+/**
+<!-- Add your navigation tabs here -->
+<nav id="tab_links">
+    <span class="tab_link" data-target="about_page" onclick="open_tab(this, 'tab_content')">About </span>
+    <span class="tab_link" data-target="programmes_page" onclick="open_tab(this, 'tab_content')">Programmes</span>
+    <span class="tab_link" data-target="videos_page" onclick="open_tab(this, 'tab_content')">Videos</span>
+</nav>
+
+<!-- [CONTENTS] -->
+<!-- Must have the corresponding text block -->
+<div id="tab_contents">
+    <div class="tab_content" id="about_page">
+        overview
+    </div>
+    <div class="tab_content" id="programmes_page">
+        programmes
+    </div>
+    <div class="tab_content" id="videos_page">
+        Video
+    </div>
+</div>
+*/

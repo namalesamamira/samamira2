@@ -1,0 +1,33 @@
+.masonry{
+    margin: 1.5em 0;
+    padding: 0;
+    .column-gap(10px);
+    .column-count(2);
+    .column-fill();
+    font-size: 0;//removes wierd spacing
+    .transition(all, 0.5s, ease-in);
+    .brick{
+        display: inline-block;
+        font-size: 16px;
+        // background: #fff;
+        // padding: 1em;
+        // margin: 0 0 1.5em;
+        width: 100%;
+        // box-sizing: border-box;
+        // -moz-box-sizing: border-box;
+        // -webkit-box-sizing: border-box;
+        // box-shadow: 2px 2px 4px 0 #ccc;
+    }
+}
+
+
+@media only screen and (max-width: 900px) {//tablet 767 waS COMMON BUT 900 MADE MORE SENSE FOR DESKTOPS
+    // .masonry {
+    //     .column-count(2);
+    // }
+}
+@media only screen and (max-width: 479px) {//phone
+    // .masonry {
+    //     .column-count(1);
+    // }
+}

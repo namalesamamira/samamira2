@@ -1,0 +1,139 @@
+/*
+ * Zodiac
+ * global.css
+ *
+ * body, paragraphs, lists, links,h etc
+ *
+ */
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;// makes it so that 1em = 10px for fonts;
+}
+html, body {
+    height:100%;
+    width:100%;
+}
+body{
+    -moz-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-smoothing: antialiased;
+    line-height: 140%;
+    font-family: @fonts;
+    font-size: @bodyFontSize;// approx 16px;
+    color:@bodyText;
+}
+a{
+    text-decoration: none;
+    color: @mainBrand;
+    &:hover{
+        color: @subBrand1;
+    }
+}
+h1{
+    font-size: @h1;
+}
+h2, legend{
+    font-size: @h2;
+}
+h3 {
+    font-size: @h3;
+}
+h4 {
+    font-size: @h4;
+}
+h1, h2, h3, h4, legend{
+    display: block;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    line-height: 120%;
+    color: @mainBrand;
+    font-weight:bold;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid @mainBrand;
+    margin: 1em 0;
+    padding: 0;
+}
+iframe{
+    width: 100%;
+}
+img{
+    font-size:1em;
+    max-width: 100%;
+    height:auto;
+    object-fit: cover;
+}
+ol{
+	list-style-type:decimal;
+}
+p{
+    margin:0;
+    padding:0;
+    min-height: 1em;
+}
+small, .small{
+	font-size:0.8em;
+}
+.bold{
+    font-weight: bold;
+}
+.aligncenter{
+    text-align: center;
+}
+.alignright{
+    text-align: right;
+}
+.alignleft{
+    text-align: left;
+}
+.full_justify{
+    text-align: justify;
+}
+.full_width{
+    width: 100%;
+}
+.no_line_height{
+    line-height: 0px;
+}
+.clear:after{
+	content: "";
+	visibility: hidden;
+    overflow:hidden;
+	display: block;
+	width:0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	clear: both;
+}
+.invisible{
+	display: none;
+    visibility: hidden;
+}
+::-moz-selection, ::selection{
+    background-color:@mainBrand;
+    color:#fff;
+    text-shadow: none;
+}
+ol, ul,li{
+    margin:0;
+    padding:0;
+}
+.padding{
+    padding: 10px;
+}
+section{
+    padding: 40px 0px;
+    &.no_padding{
+        padding: 0px;
+    }
+}

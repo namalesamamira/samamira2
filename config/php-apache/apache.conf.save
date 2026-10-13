@@ -1,0 +1,9 @@
+<VirtualHost *:80/home/sam/www/PesaTransfer/public_html>
+    DocumentRoot 
+    <Directory /home/sam/www/PesaTransfer/public_html>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    </Directory>
+</VirtualHost>

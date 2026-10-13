@@ -1,0 +1,29 @@
+label.jserror, // jquery.validate errors
+div.errorLabel{ //laravel errors
+    background-color: #f00;
+    color: #fff;
+    padding: 3px;
+}
+div,li{
+    &.error,&.warning{
+        border:1px solid #900;
+        position: relative;
+        padding: 5px;
+        background-color:#900;
+        color:#fff;
+        display:block;
+        width: max-content;
+        &:before{
+            content: " ";
+            .arrow-up-mark();
+        }
+    }
+}
+div.warning{
+    border:1px solid #ff6;
+    background-color:#ff6;
+    color:#000;
+    &:before{
+        border-bottom: 5px solid #ff6;
+    }
+}

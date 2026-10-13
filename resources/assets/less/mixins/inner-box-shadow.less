@@ -1,0 +1,14 @@
+/*
+ * mixin:.inner-box-shadow
+ *
+ * Creates inner shadows
+ *
+ * Parameters:
+ * - @arguments:0px 0px 10px 0px #666
+ *
+ * */
+.inner-box-shadow(@arguments:1em 1em 1em 1em #ccc) {
+  -webkit-box-shadow: inset @arguments;
+  -moz-box-shadow: inset @arguments;
+  box-shadow: inset @arguments;
+}

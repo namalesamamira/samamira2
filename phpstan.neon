@@ -1,0 +1,11 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - phpstan.changed-paths.neon
+
+parameters:
+    level: 5
+
+    tmpDir: storage/phpstan
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    reportUnmatchedIgnoredErrors: false

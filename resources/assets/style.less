@@ -1,0 +1,541 @@
+// out: style.css, sourcemap: false, compress: true
+//naming this as style so that it is compatible with wordpress out of the box
+/***************************/
+/*        VARIABLES        */
+/***************************/
+
+@bodyText:#444444; //all the sites text
+@mainBrand:#ff0000; //headers,menus, buttons
+@subBrand1:#f44336; //yellow
+@subBrand2:#000000;
+@subBrand3: #ef4136;
+
+@h1: 42px;
+@h2: 34px;
+@h3: 22px;
+@h4: 16px;
+
+@fonts: sans-serif;
+@secondary_fonts: serif;
+
+@bodyFontSize: 1.6em;//approx 16 px
+@siteMaxWidth: 1200px;
+@gutter: 10px; //The gutter-width of your grid in pixels
+
+/***************************/
+/*         MIXINS          */
+/***************************/
+@import "less/mixins/box-shadow.less";
+@import "less/mixins/lessOpacity.less";
+@import "less/mixins/column-gap.less";
+@import "less/mixins/column-count.less";
+@import "less/mixins/column-fill.less";
+@import "less/mixins/gradient.less";
+@import "less/mixins/border-radius-full.less";
+@import "less/mixins/inner-box-shadow.less";
+@import "less/mixins/notification.less";
+@import "less/mixins/transition.less";
+@import "less/mixins/flex.less";
+@import "less/mixins/arrows.less";
+@import "less/mixins/transform.less";
+@import "less/mixins/lightbox.less";
+@import "less/mixins/colours.less";
+@import "less/mixins/fullscreenBackground.less";
+@import "less/mixins/grayscale.less";
+
+/***************************/
+/*         IMPORTS         */
+/***************************/
+@import "less/normalize.less"; // supports ie below 10, while sanitize didnt
+@import "less/wrapper.less";
+@import "less/tabs.less";
+@import "less/global.less"; //body, paragraphs, lists, links,h etc
+@import "less/zebra_striped.less";
+@import "less/loading.less";
+@import "less/grid.less";
+@import "less/masonry.less";
+@import "less/navigation.less"; //menus etc
+@import "less/pagination.less";
+@import "less/admin.less";
+@import "less/forms.less";
+@import "less/autosuggest.less";
+@import "less/breadcrumbs.less";
+@import "less/login.less";
+@import "less/hopscotch.less";
+@import "less/errors.less";
+@import "less/dashboard.less";
+@import "less/bxoverides.less";
+@import "less/sprites.less";
+@import "less/sharethis.less";
+@import "less/cursor.less";
+@import "less/spinner.less";
+@import "less/tags.less";
+@import "less/dropzone.less";
+@import "less/jplayer.less";
+@import "less/vertical_center.less";
+@import "less/accordion.less"; // from https://accordion.js.org/
+@import "less/scrollbar_colours.less";
+// @import "less/woocomerce.less";
+
+
+/***************************/
+/*         CUSTOM          */
+/***************************/
+header{
+    line-height:100%;
+    padding: 10px 0px;
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    z-index: 9;
+    width: 100%;
+    a{
+        color: #fff;
+        &:hover{
+            color: #fff;
+        }
+    }
+    .logo{
+        line-height: 100%;
+        display: inline-block;
+    }
+    img{
+        width: 60px;
+        height: 60px;
+        margin-left: 5px;
+        border-radius: 900px;
+    }
+    nav{
+        padding-top: 10px;
+    }
+    nav ul li a,.registerTag{
+        padding:0px 20px;
+        font-size: 16px;
+    }
+    .motto{
+        font-size: 14px;
+        font-weight: normal;
+    }
+    .caption{
+        vertical-align: top;
+        padding-top: 10px;
+        display: inline-block;
+    }
+}
+ul.pimped{
+    list-style-position: inside;
+    list-style: none;
+    padding-left: 30px;
+    max-width: 600px;
+    font-size: 18px;
+    li{
+        position: relative;
+        padding: 10px 0px;
+        border-bottom:1px solid #eee;
+        &::before{
+            content: " ";
+            display: block;
+            .svg-sprite();
+            background-image: url(/img/sprite_white.svg);
+            .svg-close();
+            background-color: @mainBrand;
+            border-radius: 9999px;
+            padding: 0px;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            font-size: 0px;
+            line-height: 0px;
+            position: absolute;
+
+            left: -30px;            
+        }
+    }
+}
+section.content_item_banner{
+    margin-top:90px;
+    padding: 0px;
+    background-image: url(/img/bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+    position: relative;
+    .wrapper{
+        padding-top: 400px;
+        padding-bottom: 40px;
+        position: relative;
+        z-index: 2;
+        color: white;
+        padding-right: 700px;
+        font-size: 18px;
+        line-height: 120%;
+        h1,a{
+            color: white;
+        }
+    }
+    &::before{
+        content: " ";
+        position: absolute;
+        width: 100%;
+        background-color: #000000cc;
+        height: 100%;
+        z-index: 1;
+    }
+}
+.header_background{
+    width: 100%;
+    background-color: @mainBrand;
+    height: 90px;
+    z-index: -9;
+    position: absolute;
+    top: 0px;
+}
+h1,h2,h3{
+    &.image_gradient{
+        background-color: @mainBrand;
+        background-image: url(/img/bg.webp);
+        background-repeat: repeat;
+        background-size: 400px;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+.menuwrapper.open a{
+    font-size: 32px;
+    display: block;
+    padding: 20px 20px;
+}
+a.edit,a.delete{
+    display:inline-block;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    &::before{
+        content: " ";
+        .svg-sprite();
+        .svg-close();
+    }
+}
+a.delete{
+    &::before{
+        .svg-close();
+    }
+}
+.button,button{
+    &.image_gradient{
+        background-image: url(/img/bg.webp);
+        background-repeat: no-repeat;
+        background-size: 400px;
+        font-weight: bold;
+        .transition(all, 0.5s, ease-in);
+        border: 1px solid #fff;
+        &.loading{
+            background-color: @mainBrand;
+            background-size: 20px;
+            background-image: url(/img/loading.gif);
+        }
+    }
+}
+#particles-js{
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 650px;
+} 
+.card{
+    .image{
+        background-image: url(/img/folio_shadow.jpg);
+        background-repeat: no-repeat;
+        background-position: bottom center;        
+        border-bottom:1px solid #ccc;
+        padding: 0px 20px;
+        line-height: 0px;
+        background-size: contain;
+        img{
+            width: 100%;
+            height: 185px;
+            line-height: 120%;
+            object-position: top center;
+            border: solid 1px #ddd;
+            background-color: #fff;
+        }
+    }
+}
+section.featured, section.small_featured{
+    background-color: @mainBrand;
+    .fullscreenBackground('../img/bg.webp');
+    color: #fff;
+    position: relative;
+    h1,h2,a{
+        color: #fff;
+    }
+    h2{
+        font-size: 22px;
+        font-weight: normal;
+        line-height: 120%;
+    }
+    .vertical_center{
+        min-height: 650px;
+    }
+    .wrapper{
+        div{
+            max-width: 800px;
+        }
+    }
+    .button{
+        background-color: #fff;
+        color: @mainBrand;
+    }
+}
+.error_404{
+    section.small_featured{
+        height: 100vh;
+        text-align: center;
+    }
+    header{
+        position: unset;
+    }
+}
+section.small_featured{
+    padding-top: 100px;
+    .vertical_center{
+        min-height: unset;
+    }
+    label{
+        display: none;
+    }
+    input[type="text"],textarea{
+        color: #fff;
+        background-color: transparent;
+        border:1px solid #fff5;
+        &:focus{
+            border:1px solid #ffff;
+        }
+    }
+    #title{
+        height: 3em;
+    }
+}
+.wrapper{
+    padding: 0px 10px;
+}
+article{
+    margin-bottom: 40px;
+}
+.newsletter{
+    background-color: @subBrand2;
+    color: #fff;
+    .col-6{
+        padding:20px;
+    }
+}
+.genericintro{
+    ul{
+        padding-left: 20px;
+    }
+}
+.open{
+    .transition(all, 0.2s, ease-in);
+}
+.isopen{
+    .transform (180deg, 1, 0deg, 0px);
+}
+.genericmeta{
+    margin-bottom: 20px;
+    font-size: 12px;
+    text-transform:uppercase;
+    color: #666;
+}
+h2.generictitle{
+    margin-bottom: 0;
+}
+.fullblog{
+    .genericmedia.empty{
+        display: none;
+    }
+}
+.wrapper.maincontent{
+    min-height: 75vh;
+}
+.right{
+    padding-left: 20px;
+    .genericmedia{
+        float: left;
+        width: 100%;
+        height: 85px;
+        &.empty{
+            width: 100%;
+            height: 85px;
+        }
+    }
+    .contenthalf{
+        padding-left:10px;
+    }
+    h3{
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+    article{
+        margin-bottom: 10px;
+    }
+}
+.phoneIcon,.emailIcon{
+    display:inline-block;
+    height: 28px;
+    line-height: 28px;
+    color: #fff;
+    margin-right: 10px;
+    vertical-align: top;
+    &:before{
+        content: " ";
+        .svg-sprite();
+        background-image: url(/img/sprite_white.svg);
+        .svg-close();
+        .transform (0deg, 1, 0deg, 0px);
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+}
+.phoneIcon{
+    margin-right: 40px;
+}
+.emailIcon{
+    &:before{
+        .svg-close();
+        vertical-align: top;
+    }
+}
+.twitterIcon,.linkedinIcon,.githubIcon{
+    display:inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+    vertical-align: top;
+    margin-right: 10px;
+    &:before{
+        content: " ";
+        .svg-sprite();
+        background-image: url(/img/sprite_white.svg);
+        .svg-close();
+        .transform (0deg, 2, 0deg, 0px);
+    }
+}
+.linkedinIcon{
+    &:before{
+        .svg-close();
+    }
+}
+.githubIcon{
+    &:before{
+        .svg-close();
+    }
+}
+// .banner{
+//     .fullscreenBackground('../img/bg.jpg','unset');
+//     background-color: #ccc;
+//     color: #fff;
+//     text-align: center;
+//     padding: 80px 0px;
+// }
+.contenthalf{
+    padding-left:40px;
+}
+.genericmedia.empty{
+    display: block;
+    height: 240px;
+    background-color: @mainBrand;
+}
+nav ul ul li a {
+    background-color: @mainBrand;
+    color: #fff;
+}
+footer{
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding-top: 40px;
+    h2,h3,h4,a{
+        color: #fff;
+        font-size: 22px;
+    }
+}
+.social{
+    a{
+        display: inline-block;
+        width: 30px;
+        height: 22px;
+        overflow: hidden;
+        &::before{
+            content: " ";
+            .svg-sprite();
+            background-image: url(/img/sprite_white.svg);
+            .svg-close();
+        }
+        &.linkedin_icon{
+            &::before{
+                .svg-close();
+            }
+        }
+        &.twitter_icon{
+            &::before{
+                .svg-close();
+            }
+        }
+        &.facebook_icon{
+            &::before{
+                .svg-close();
+            }
+        }
+    }
+}
+.menuwrapper.open, 
+.searchBox.open{
+    background-color: @mainBrand;
+    color: #fff;    
+    border-bottom:1px solid #fff;
+    padding-top: 0px;
+    top: -10px;
+    a{
+        color: #fff;
+    }
+}
+.imagehalf{
+    img{
+        border:1px solid #ddd;
+    }
+}
+.gray_row{
+    background-color: #eee;
+}
+.dropzone.dz-clickable * {
+    cursor: unset;
+}
+.dropzone.dz-clickable .dz-preview:hover{
+    cursor:grab !important;
+}
+.mobilemenu::before {
+    background-image: url(/img/sprite_white.svg);
+}
+@media only screen and (max-width: 1300px) {//small laptop
+
+}
+@media only screen and (max-width: 900px) {//tablet 767 waS COMMON BUT 900 MADE MORE SENSE FOR DESKTOPS
+    .card .image img {
+        width: 100%;
+        height: auto;
+    }
+    section.content_item_banner{
+        .wrapper{
+            padding-right: 0px;
+        }
+    }
+}
+@media only screen and (max-width: 479px) {//phone
+
+}
+@media only print {
+//TODO: import general print styles
+}

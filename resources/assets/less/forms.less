@@ -1,0 +1,200 @@
+.form_object{
+	margin-bottom:1em;
+	div.error{
+		border:1px solid #900;
+		position: relative;
+		padding: 5px;
+		background-color:#900;
+		color:#fff;
+		display:block;
+		width: max-content;
+		&:before{
+			content: " ";
+			.arrow-up-mark();
+		}
+	}
+}
+.blogSumary,.blogTitle{
+	.select{
+		width:1em;
+		float:left;
+		label{
+			display:none;
+		}
+	}
+	.horizontalNav{
+		li{
+			list-style: none;
+		}
+	}
+	.form_object{
+		margin:0px;
+	}
+}
+label{
+	display:block;
+}
+.inline{
+	label{
+		display:inline;
+		margin-right: 1em;
+	}
+	input[type=text]{
+		width:300px;
+	}
+}
+input[type="checkbox"],
+input[type="radio"]{
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	margin-right: 3px;
+}
+.checkbox, .radio{
+	label{
+		//Use hint for visible content, with links and stuff
+		line-height: 1em;
+		clear: both;
+		display:inline;
+		vertical-align: top;
+	}
+}
+[type="submit"], button, .button{
+	font-family: @fonts;
+	padding: 0.6em 2em;
+	display:inline-block; //prevents brocken mobile version
+	background-color:@mainBrand;
+	color:#fff;
+	border:none;
+	overflow: hidden;
+	cursor:pointer;
+	&.clear{
+		background-color: transparent;
+		color:@mainBrand;
+	}
+	&.loading{
+		padding-right: 40px;
+	}
+	&.disabled{
+		background-color: #ccc;
+		color: #666;
+	}
+    &.warning{
+        background-color: #f00;
+        color: #fff;
+    }
+}
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+input[type="date"],
+textarea,
+select{
+	appearance: none; // Removes awkward default styles on some inputs for iOS
+	border:1px solid @bodyText;
+	padding: 10px;
+	width:100%;
+	color:@bodyText;
+	&:focus{
+		border:1px solid @mainBrand;
+		outline: 0;
+		&::-webkit-input-placeholder{//remove placeholder text
+			.transition(text-indent, 2s, ease);
+			text-indent: -100%;
+			opacity: 1;
+		}
+	}
+    &.error{
+        border:1px solid #900;
+    }
+}
+button.hideShowPassword-toggle{
+	top:0px;
+	background-color: transparent;
+	color:#666;
+}
+.cke_source{
+	max-width: 100%;
+}
+.cke_editable{
+	padding:1em;
+	font-size:1em;
+	background-color: #fff;
+	background-image: none;
+	text-align: initial;
+}
+.fileUpload label{
+	display:none;
+}
+textarea {
+  overflow: auto; // Remove vertical scrollbar in IE6-9
+  vertical-align: top; // Readability and alignment cross-browser
+  height: 6.5em;
+}
+fieldset{
+	border:0;
+	padding:0;
+	margin:0;
+	max-width: 100%;
+}
+#suggestions,
+#editUsers legend{
+	display:none;
+}
+.tofields{
+	label{
+		display:inline;
+	}
+	select{
+		width:70px;
+		margin-left:1em;
+		margin-right:1em;
+	}
+	.form_object.dropdown{
+		width:80px;
+		display:inline;
+	}
+	.form_object.textbox{
+		width:80px;
+		display:inline;
+		//float ;left
+	}
+	.form_object.textbox.invisible{
+		display:none;
+	}
+}
+//make placeholder text dissapear when in focus
+input[type="text"]:focus::-webkit-input-placeholder,
+input[type="search"]:focus::-webkit-input-placeholder,
+input[type="password"]:focus::-webkit-input-placeholder,
+input[type="date"]:focus::-webkit-input-placeholder,
+input[type="email"]:focus::-webkit-input-placeholder{
+	.transition(text-indent, 2s, ease);
+	text-indent: -100%;
+	opacity: 1;
+}
+@media only print{
+  .textbox input {
+		border: 1px solid @mainBrand;
+		height: 40px;
+		line-height: 40px;
+		color:#fff;
+	}
+	//removes placeholder text for print
+	input::-webkit-input-placeholder { color:transparent; }
+	input:-moz-placeholder { color:transparent; } /* FF 4-18 */
+	input::-moz-placeholder { color:transparent; } /* FF 19+ */
+	input:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+	form{
+  		max-width: 100%;
+		width: 100%;
+	}
+	.form_object {
+		margin-bottom: 20px;
+	}
+}

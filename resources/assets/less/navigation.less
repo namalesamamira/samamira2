@@ -1,0 +1,138 @@
+nav{
+	ul{
+		li{
+		    list-style-type:none;
+		    display:inline-block;
+		    position:relative;
+		    a{
+		    	display: block;
+		    }
+			ul{
+				display:none;
+				text-align: left;
+				li{
+				    display: block;
+					ul{
+						margin-left: 100%;
+						top: 0px;
+					}
+				}
+			}
+		}
+	}
+	li:hover > ul{
+		display:block;
+		position:absolute;
+		min-width:120px;
+		z-index:1000;
+	}
+	li:hover {//AFTER DISPLAY IS THE IE GHOST HOVER FIX
+		position:relative;
+		z-index:2000;//IE7 Z-INDEX BUG FIX, MUST FALL AFTER DISPLAY RULE
+	}
+}
+.mobilemenu{
+	display:none;
+	position:absolute;
+        top: 0;
+	cursor:pointer;
+	overflow: hidden;
+	width:40px;
+	height:24px;
+	z-index: 999;
+	color: transparent;
+	text-align: left;
+	&::before{
+		content:" ";
+		.svg-sprite();
+	}
+}
+.mobilemenu::before{
+	.svg-menu();
+	position:absolute;
+	left: 0;
+}
+.open .mobilemenu::before{
+	.svg-close();
+}
+.menuwrapper{
+	//makes it scale out from the menu icon
+	// .transition(all, 0.2s, ease-in);
+	&.open{
+		.menu{
+			display:block;
+			margin-top: 40px;
+			li{
+				display:block;
+			}
+		}
+		ul{
+			margin-left: 1em;
+		}
+	}
+}
+.menuwrapper.open{
+	width:100vw;
+	position:absolute;
+	top:0px;
+	right:0px;
+	height: 100vh;
+	z-index: 9999;
+	nav{
+		display:block;
+		// position:relative;
+		// z-index:9999999999999;
+	}
+	.mobilemenu{
+		display:block;
+		right:0;
+		left:auto;
+		&::before{
+			.svg-close();
+		}
+	}
+}
+@media only screen and (max-width: 900px) {//tablet
+	header{
+		position:relative;
+		z-index:9;
+		padding-top: 0;
+		.menuwrapper{
+			//initiallt the same size as the menu icon
+			overflow: hidden;
+			width:24px;
+			height:24px;
+			color:transparent;//rather than
+			position:absolute;
+			top:0px;
+			right:10px;
+		}
+		.menuwrapper{
+			// display:none;
+			// visibility: none;
+			li{
+				display: block;
+				width: 100%;
+			}
+		}
+		.menuwrapper {
+			.menu{
+				display:none;
+			}
+		}
+		.mobilemenu{
+			display:block;
+		}
+	}
+	nav ul{
+		li ul{
+			display:block;
+		}
+		li:hover > ul{
+			position:relative;
+		}
+	}
+}
+@media only screen and (max-width: 450px) {//phone
+
+}

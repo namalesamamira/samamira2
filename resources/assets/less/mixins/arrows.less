@@ -1,0 +1,31 @@
+.arrow-mark(@size: 5px){
+	width: 0;
+	height: 0;
+	border: @size solid transparent;
+	position:absolute;
+	z-index:10;
+}
+.arrow-up-mark(@size: 5px,@color: #900){
+	.arrow-mark(@size);
+	border-bottom: @size solid @color;
+	border-top: none;
+	top:-@size;
+}
+.arrow-left-mark(@size: 5px,@color: #900){
+	.arrow-mark(@size);
+	border-right: @size solid @color;
+	border-left: none;
+	left:-@size;
+}
+.arrow-right-mark(@size: 5px,@color: #900){
+	.arrow-mark(@size);
+	border-left: @size solid @color;
+	border-right: none;
+	right:-@size;
+}
+.arrow-down-mark(@size: 5px,@color: #900){
+	.arrow-mark(@size);
+	border-top: @size solid @color;
+	border-bottom: none;
+	bottom:-@size;
+}

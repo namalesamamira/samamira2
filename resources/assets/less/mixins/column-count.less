@@ -1,0 +1,14 @@
+/*
+ * mixin:column-count
+ *
+ * Creates rounded borders
+ *
+ * Parameters:
+ * - radius
+ *
+ * */
+ .column-count(@columns: 2){
+	-moz-column-count: @columns;
+    -webkit-column-count: @columns;
+    column-count: @columns;
+}

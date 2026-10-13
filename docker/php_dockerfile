@@ -1,0 +1,40 @@
+FROM php:8.2-fpm-alpine
+
+# Install PHP dependencies
+# RUN apt-get update && apt-get install -y \
+#     git \
+    # curl \
+    # cron \
+    # nano \
+    # unzip \
+    # libzip-dev \
+    # libpng-dev \
+    # libonig-dev \
+    # libxml2-dev \
+    # libjpeg-dev \
+    # zip \
+    # supervisor \
+    # && docker-php-ext-install mysqli
+    # && docker-php-ext-install mysqli pdo pdo_mysql mbstring exif pcntl bcmath gd zip
+    
+# RUN rm -r /var/lib/apt/lists/*
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Configure nginx
+# COPY docker/default.conf /etc/nginx/sites-available/default
+# RUN ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Supervisor to run nginx + php-fpm in one container
+# COPY --chown=root:root docker/supervisord.conf /etc/supervisord.conf
+
+WORKDIR /var/www
+
+# EXPOSE 80
+
+# CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+
+RUN sed -i 's/listen = 127.0.0.1:9000/listen = 0.0.0.0:9090/' /usr/local/etc/php-fpm.d/www.conf
+EXPOSE 9090

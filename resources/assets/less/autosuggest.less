@@ -1,0 +1,49 @@
+#suggestions{
+	position:absolute;
+	width:20em;
+	padding-top: 0.5em;
+	top:0em;
+
+	//max-height: 350px;
+	//overflow: auto;
+
+	.arrow-up {
+		top:0em;
+		display:none;
+	}
+	.close img{
+		float:right;
+		transform:scale(0.6,0.6);
+		-ms-transform:scale(0.6,0.6); /* IE 9 */
+		-webkit-transform:scale(0.6,0.6); /* Safari and Chrome */
+		.opacity(0.5);
+	}
+	.close img:hover{
+		.opacity(1);
+	}
+	#suggestedItem{
+		display:block;
+		padding:1em;
+		border-bottom:0.1em solid @bodyText;
+		background-color:@bodyText + #333;
+	}
+	#suggestedItem:hover{
+		background-color:@bodyText + #555;
+		text-decoration: none;
+	}
+	h3{
+		margin:0em;
+	}
+}
+#suggestions:before {
+	content: "";
+	border-style: solid;
+	border-width: 0 0.5em 0.5em 0.5em;
+	border-color: transparent transparent #ccc transparent;
+	height: 0;
+	position: absolute;
+	left: 0.3em;
+	top: 0em;
+	width: 0;
+	-webkit-transform: rotate(360deg);
+}

@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG CSS sprite preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+
+            i {
+                text-indent: 200%;
+                white-space: nowrap;
+                overflow: hidden;
+                display: inline-block;
+                background-size: 96px 96px !important;
+            }
+        </style>
+
+<!--
+Sprite CSS
+====================================================================================================
+This is an all-in-one inline version of the CSS necessary to use the SVG sprite.
+-->
+
+<style>
+.svg-black--svg--angle-double-right {
+    background: url("svg/sprite.css-3075ea10.svg") 0 0 no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--angle-right {
+    background: url("svg/sprite.css-3075ea10.svg") 20% 0 no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--arrow-circle-right {
+    background: url("svg/sprite.css-3075ea10.svg") 0 20% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--bars {
+    background: url("svg/sprite.css-3075ea10.svg") 20% 20% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--calendar {
+    background: url("svg/sprite.css-3075ea10.svg") 40% 0 no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--caret-right {
+    background: url("svg/sprite.css-3075ea10.svg") 40% 20% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--check {
+    background: url("svg/sprite.css-3075ea10.svg") 0 40% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--chevron-right {
+    background: url("svg/sprite.css-3075ea10.svg") 20% 40% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--envelope {
+    background: url("svg/sprite.css-3075ea10.svg") 40% 40% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--eye {
+    background: url("svg/sprite.css-3075ea10.svg") 60% 0 no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--facebook {
+    background: url("svg/sprite.css-3075ea10.svg") 60% 20% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--github {
+    background: url("svg/sprite.css-3075ea10.svg") 60% 40% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--home {
+    background: url("svg/sprite.css-3075ea10.svg") 0 60% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--info {
+    background: url("svg/sprite.css-3075ea10.svg") 20% 60% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--instagram {
+    background: url("svg/sprite.css-3075ea10.svg") 40% 60% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--linkedin {
+    background: url("svg/sprite.css-3075ea10.svg") 60% 60% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--lock {
+    background: url("svg/sprite.css-3075ea10.svg") 80% 0 no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--map-marker {
+    background: url("svg/sprite.css-3075ea10.svg") 80% 20% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--pencil {
+    background: url("svg/sprite.css-3075ea10.svg") 80% 40% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--phone {
+    background: url("svg/sprite.css-3075ea10.svg") 80% 60% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--plus {
+    background: url("svg/sprite.css-3075ea10.svg") 0 80% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--rss {
+    background: url("svg/sprite.css-3075ea10.svg") 20% 80% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--search {
+    background: url("svg/sprite.css-3075ea10.svg") 40% 80% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--shopping-cart {
+    background: url("svg/sprite.css-3075ea10.svg") 60% 80% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--sign-out {
+    background: url("svg/sprite.css-3075ea10.svg") 80% 80% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--square-o {
+    background: url("svg/sprite.css-3075ea10.svg") 100% 0 no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--tags {
+    background: url("svg/sprite.css-3075ea10.svg") 100% 19.51219512195122% no-repeat;
+    width: 16px;
+    height: 14px;
+}
+.svg-black--svg--times {
+    background: url("svg/sprite.css-3075ea10.svg") 100% 37.5% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--twitter {
+    background: url("svg/sprite.css-3075ea10.svg") 100% 57.5% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--user {
+    background: url("svg/sprite.css-3075ea10.svg") 100% 77.5% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-black--svg--youtube-play {
+    background: url("svg/sprite.css-3075ea10.svg") 0 100% no-repeat;
+    width: 16px;
+    height: 16px;
+}
+.svg-sprites {
+    background: url("svg/sprite.css-3075ea10.svg") 100% 0 no-repeat;
+    width: 0px;
+    height: 0px;
+}
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG CSS sprite preview</h1>
+            <p>This preview features the generated SVG file as a conventional CSS sprite. The shapes are displayed as background images of several <code>&lt;i&gt;</code> elements.</p>
+        </header>
+        <section>
+
+<!--
+Conventional CSS sprite
+====================================================================================================
+This technique uses CSS classes to display portions of the sprite as background image of
+appropriately sized elements.
+-->
+
+            <ul>
+             <li title="black--svg--angle-double-right">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--angle-double-right">black--svg--angle-double-right</i>
+                    </div>
+                    <h2>black--svg--angle-double-right, </h2>
+                </li>
+             <li title="black--svg--angle-right">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--angle-right">black--svg--angle-right</i>
+                    </div>
+                    <h2>black--svg--angle-right, </h2>
+                </li>
+             <li title="black--svg--arrow-circle-right">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--arrow-circle-right">black--svg--arrow-circle-right</i>
+                    </div>
+                    <h2>black--svg--arrow-circle-right, </h2>
+                </li>
+             <li title="black--svg--bars">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--bars">black--svg--bars</i>
+                    </div>
+                    <h2>black--svg--bars, </h2>
+                </li>
+             <li title="black--svg--calendar">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--calendar">black--svg--calendar</i>
+                    </div>
+                    <h2>black--svg--calendar, </h2>
+                </li>
+             <li title="black--svg--caret-right">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--caret-right">black--svg--caret-right</i>
+                    </div>
+                    <h2>black--svg--caret-right, </h2>
+                </li>
+             <li title="black--svg--check">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--check">black--svg--check</i>
+                    </div>
+                    <h2>black--svg--check, </h2>
+                </li>
+             <li title="black--svg--chevron-right">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--chevron-right">black--svg--chevron-right</i>
+                    </div>
+                    <h2>black--svg--chevron-right, </h2>
+                </li>
+             <li title="black--svg--envelope">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--envelope">black--svg--envelope</i>
+                    </div>
+                    <h2>black--svg--envelope, </h2>
+                </li>
+             <li title="black--svg--eye">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--eye">black--svg--eye</i>
+                    </div>
+                    <h2>black--svg--eye, </h2>
+                </li>
+             <li title="black--svg--facebook">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--facebook">black--svg--facebook</i>
+                    </div>
+                    <h2>black--svg--facebook, </h2>
+                </li>
+             <li title="black--svg--github">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--github">black--svg--github</i>
+                    </div>
+                    <h2>black--svg--github, </h2>
+                </li>
+             <li title="black--svg--home">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--home">black--svg--home</i>
+                    </div>
+                    <h2>black--svg--home, </h2>
+                </li>
+             <li title="black--svg--info">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--info">black--svg--info</i>
+                    </div>
+                    <h2>black--svg--info, </h2>
+                </li>
+             <li title="black--svg--instagram">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--instagram">black--svg--instagram</i>
+                    </div>
+                    <h2>black--svg--instagram, </h2>
+                </li>
+             <li title="black--svg--linkedin">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--linkedin">black--svg--linkedin</i>
+                    </div>
+                    <h2>black--svg--linkedin, </h2>
+                </li>
+             <li title="black--svg--lock">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--lock">black--svg--lock</i>
+                    </div>
+                    <h2>black--svg--lock, </h2>
+                </li>
+             <li title="black--svg--map-marker">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--map-marker">black--svg--map-marker</i>
+                    </div>
+                    <h2>black--svg--map-marker, </h2>
+                </li>
+             <li title="black--svg--pencil">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--pencil">black--svg--pencil</i>
+                    </div>
+                    <h2>black--svg--pencil, </h2>
+                </li>
+             <li title="black--svg--phone">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--phone">black--svg--phone</i>
+                    </div>
+                    <h2>black--svg--phone, </h2>
+                </li>
+             <li title="black--svg--plus">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--plus">black--svg--plus</i>
+                    </div>
+                    <h2>black--svg--plus, </h2>
+                </li>
+             <li title="black--svg--rss">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--rss">black--svg--rss</i>
+                    </div>
+                    <h2>black--svg--rss, </h2>
+                </li>
+             <li title="black--svg--search">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--search">black--svg--search</i>
+                    </div>
+                    <h2>black--svg--search, </h2>
+                </li>
+             <li title="black--svg--shopping-cart">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--shopping-cart">black--svg--shopping-cart</i>
+                    </div>
+                    <h2>black--svg--shopping-cart, </h2>
+                </li>
+             <li title="black--svg--sign-out">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--sign-out">black--svg--sign-out</i>
+                    </div>
+                    <h2>black--svg--sign-out, </h2>
+                </li>
+             <li title="black--svg--square-o">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--square-o">black--svg--square-o</i>
+                    </div>
+                    <h2>black--svg--square-o, </h2>
+                </li>
+             <li title="black--svg--tags">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--tags">black--svg--tags</i>
+                    </div>
+                    <h2>black--svg--tags, </h2>
+                </li>
+             <li title="black--svg--times">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--times">black--svg--times</i>
+                    </div>
+                    <h2>black--svg--times, </h2>
+                </li>
+             <li title="black--svg--twitter">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--twitter">black--svg--twitter</i>
+                    </div>
+                    <h2>black--svg--twitter, </h2>
+                </li>
+             <li title="black--svg--user">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--user">black--svg--user</i>
+                    </div>
+                    <h2>black--svg--user, </h2>
+                </li>
+             <li title="black--svg--youtube-play">
+                    <div class="icon-box">
+                        <i class="svg-black--svg--youtube-play">black--svg--youtube-play</i>
+                    </div>
+                    <h2>black--svg--youtube-play, </h2>
+                </li>
+             <li title="sprites">
+                    <div class="icon-box">
+                        <i class="svg-sprites">sprites</i>
+                    </div>
+                    <h2>sprites, </h2>
+                </li>
+            </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Thu, 18 May 2023 12:09:59 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>

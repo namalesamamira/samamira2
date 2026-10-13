@@ -1,0 +1,119 @@
+/*
+ * ZODIAC
+ * dashboard.less
+ *
+ *
+ *
+ */
+
+.side_dashboard{
+	.transition(all, 0.4s, ease-in-out);
+	position: fixed;
+	top: 0px;
+    left: -200px;
+	z-index: 9999999;
+	width: 200px;
+	background-color: @bodyText;
+    color: #fff;
+    height: 100vh;
+}
+.dashboard_menu{
+    overflow: auto;
+    height: 100vh;
+    position: absolute;
+    padding-bottom: 80px;
+
+}
+.dashboard_opener{
+    position: relative;
+    right: 0px;
+    top: 0px;
+    .transition(all, 0.2s, ease-in);
+    z-index: 9999;
+    &::after{
+        .transition(all, 0.3s, ease-in);
+        content: " ";
+        .svg-sprite();
+        .svg-close();
+        position: absolute;
+        right: -20px;
+        top: 0px;
+        background-color: #999;
+        cursor:pointer;
+        z-index: 9999;
+    }
+    &:hover{
+        &::after{
+            background-color: #fff;
+        }
+    }
+}
+.dashboard_menu{
+    width: 100%;
+	a{
+		color:#fff;
+	}
+	.dashmenuitem{
+		border-bottom:1px solid #fff;
+		img{
+			max-width: 100%;
+		}
+		.add{
+			.svg-sprite();
+			.svg-close();
+			float:right;
+		}
+	}
+	.dashmenuitem, a.logout{
+		display:block;
+	}
+	a.logout{
+		background-color: #f00;
+		margin-left:1em;
+		margin-top:1em;
+		width:6em;
+		text-align: center;
+	}
+}
+.side_dashboard.open{
+	left: 0px;
+    .dashboard_opener{
+        position: relative;
+        &::after{
+            right: 0px;
+            .transform (180deg, 1, 0deg, 0px);
+        }
+    }
+}
+header{
+    .side_dashboard nav ul li{
+        display: block;
+        width: 100%;
+        a{
+            padding: 10px;
+            &:hover{
+                background-color: @mainBrand;
+            }
+        }
+        ul{
+            display: block;            
+            position: relative;
+            li a{
+                padding: 5px 0px;
+                padding-left: 2em;
+                background-color: transparent;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 959px) {//tablet
+	
+}
+@media only screen and (max-width: 450px) {//phone
+	
+}
+@media only print {
+    .side_dashboard{
+        display: none;
+    }
+}

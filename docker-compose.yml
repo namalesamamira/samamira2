@@ -1,0 +1,52 @@
+services:
+  mysql:
+    image: mysql
+    hostname: mysql
+    container_name: mysql-${APP_NAME:?Set APP_NAME in .env}
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # - ./my.cnf:/etc/mysql/conf.d
+    networks:
+      - back
+    restart: always
+    ports:
+      - "3706:3306"
+    environment:
+      MYSQL_USER: sam
+      MYSQL_PASSWORD: abc123
+      MYSQL_DATABASE: ${DB_DATABASE:?Set DB_DATABASE in .env}
+      MYSQL_ROOT_PASSWORD: abc123
+      MYSQL_ROOT_USER: root
+
+  php-apache:
+    # image: php:7.2.1-apache
+    # image: php:apache
+    build:
+      context: ./config/php-apache
+    container_name: php-apache-${APP_NAME:?Set APP_NAME in .env}
+    user: "${UID:-1000}:${GID:-1000}"
+    networks:
+      - back
+    depends_on:
+      # - php
+      - mysql
+    # volumes_from:
+    #   - php
+    volumes:
+      # - .:/usr/share/nginx/html/wordpress
+      - .:/var/www/html
+      - ./config/php-apache/apache.conf:/etc/apache2/sites-available/000-default.conf
+      - ./config/php-apache/custom.php.ini:/usr/local/etc/php/conf.d/custom.php.ini
+      # php.ini /usr/local/etc/php/
+      # - .config/php.ini:/usr/local/etc/php/conf.d
+      # - .config/php:/usr/local/etc/php
+    links:
+      - 'mysql'
+    ports:
+      - "8081:80"
+networks:
+  back:
+# persisting volumes
+volumes:
+  mysql-data:
+    name: ${COMPOSE_PROJECT_NAME}_mysql-${APP_NAME:?Set APP_NAME in .env}

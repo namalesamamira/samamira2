@@ -1,0 +1,13 @@
+.breadcrumb{
+	margin-top:10px;
+	.breadcrumbdiv{
+		.svg-sprite();
+		.svg-close();
+		overflow: hidden;
+		&::before{
+			content:"";
+			.svg-sprite();
+			.svg-close();
+		}
+	}
+}

@@ -1,0 +1,93 @@
+/*
+ * functions.css
+ *
+ * functions made from my snippet library
+ *
+ * TODO
+ * shadow
+ * rounded edge
+ * gradient
+ * background
+ * alpha
+ * border
+ * caps
+ * font
+ * hand
+ * ol
+ *
+*/
+
+
+/*
+
+.lessFullScreen (@image:'bg.jpg', @vertPos:center,@horPos:center,@scrollType:fixed){
+	background: url(/img/@image) no-repeat @vertPos @horPos @scrollType;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.lessFullScreen{
+	background: url(/img/bg.jpg) no-repeat top left fixed ;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color:#E5E5E5;
+}
+
+.lessIeFullScreen{
+	z-index: -999;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+*/
+
+.lessInsetShadow{
+	-webkit-box-shadow: inset 1px 1px 3px 1px #999;
+	-moz-box-shadow: inset 1px 1px 3px 1px #999;
+	box-shadow: inset 1px 1px 3px 1px #999;
+}
+.box-sizing(@sizing: border-box) {
+	-ms-box-sizing: @sizing;
+	-moz-box-sizing: @sizing;
+	-webkit-box-sizing: @sizing;
+	box-sizing: @sizing;
+}
+.user-select(@argument: none) {
+	-webkit-user-select: @argument;
+	-moz-user-select: @argument;
+	-ms-user-select: @argument;
+	user-select: @argument;
+}
+// .columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+// 	-moz-column-width: @colwidth;
+// 	-moz-column-count: @colcount;
+// 	-moz-column-gap: @colgap;
+// 	-moz-column-rule-color: @columnRuleColor;
+// 	-moz-column-rule-style: @columnRuleStyle;
+// 	-moz-column-rule-width: @columnRuleWidth;
+// 	-webkit-column-width: @colwidth;
+// 	-webkit-column-count: @colcount;
+// 	-webkit-column-gap: @colgap;
+// 	-webkit-column-rule-color: @columnRuleColor;
+// 	-webkit-column-rule-style: @columnRuleStyle;
+// 	-webkit-column-rule-width: @columnRuleWidth;
+// 	column-width: @colwidth;
+// 	column-count: @colcount;
+// 	column-gap: @colgap;
+// 	column-rule-color: @columnRuleColor;
+// 	column-rule-style: @columnRuleStyle;
+// 	column-rule-width: @columnRuleWidth;
+// }
+.background-clip(@argument: padding-box) {
+	-moz-background-clip: @argument;
+	-webkit-background-clip: @argument;
+	background-clip: @argument;
+}

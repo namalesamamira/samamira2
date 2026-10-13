@@ -1,0 +1,25 @@
+.notification_messages(){
+    background-color: #900;
+    color:#fff;
+    width: 100%;
+    padding:10px;
+    position:fixed;
+    z-index: 9999999;
+    top:0px;
+    .box-shadow(0em 0em 1em 0em #000);
+    .close{
+        .svg-sprite();
+        .svg-close();
+        float:right;
+        cursor:pointer;
+    }
+    li{
+        list-style: none;
+    }
+}
+.notification_item{
+    font-weight: bold;
+    &.seen{
+        font-weight: normal;
+    }
+}

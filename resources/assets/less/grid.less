@@ -1,0 +1,81 @@
+.flex{
+	.flex-box();
+	width:100%;
+	.flex-direction(row);
+	// .flex-justify(center);//align items in the middle
+	.flex-justify(space-around);//align items in the middle
+	.flex-wrap(wrap);
+	.flex-align-items(stretch);//all same height
+    // justify-content: flex-start;
+    // align-content: flex-start;
+    // align-items: flex-start;
+    // position:relative;//so that widths are relative to the container
+    // &:after,//CANT REMEMBER WHY THIS IS NECESSARY
+	// &:before {
+	//     content: '';
+	//     display: block;
+	//     clear: both;
+	//     height: 0;
+	// }
+    // [class*='col-']{
+    //     line-height: 0;
+    //     *{
+    //         line-height: 100%;
+    //     }
+    // }
+}
+.col-0{
+    flex:auto;
+    // flex-flow: row wrap;
+    // justify-content: space-around;
+}
+.col-12{
+    width:100%;
+    // flex-grow:11;
+}
+.col-11{
+    width:91.666666%;
+}
+.col-10{
+    width:83.333333%;
+}
+.col-9{
+    width:75%;
+}
+.col-8{
+    width:66.666666%;
+}
+.col-7{
+    width:58.333333%;
+}
+.col-6{//half
+    width:50%;
+    // content:0.5;
+}
+.col-5{
+    width:41.666666%;
+}
+.col-4{
+    width:33.333333%;
+}
+.col-3{
+    width:25%;
+}
+.col-2{
+    width:16.666666%;
+}
+.col-1{
+    width:8.333333%;
+}
+@media only screen and (max-width: 900px) {
+    .flex{
+    	flex-direction: column;
+        [class*='col-']{
+            width: 100%;
+            // flex:1;
+            // flex-shrink: 1;
+            // display:block;
+        }
+    }
+}
+

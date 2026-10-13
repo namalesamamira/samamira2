@@ -1,0 +1,115 @@
+/*
+ * ZODIAC
+ * login.css
+ *
+ * loginpage only
+ *
+ */
+
+.loginpage.minimal,.registerpage.minimal{
+	.wrapper{
+		width:300px;
+		max-width:100%;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -150px;
+		margin-left: -125px;
+		padding:10px;
+		footer{
+			text-align: center;
+		}
+	}
+	header{
+		text-align:center;
+		margin-bottom: 40px;
+		background-color: transparent;
+	}
+	footer{
+		position:absolute;
+		bottom:0px;
+		width:100%;
+		text-align: center;
+	}
+	.logintitle{
+		.col-6{
+			line-height: 30px;
+			legend{
+				margin:0px;
+			}
+		}
+		.col-6.alignright{
+			text-align: right;
+			a{
+				text-decoration: underline;
+			}
+		}
+	}
+	.loginform,.register{
+		label{
+			.invisible();
+		}
+		.form_object {
+			margin-top: 0px;
+			border-bottom:1px solid #999;
+			&.names::before,&.password::before,&.email::before,&.userlevels::before{
+				content: "";
+				.svg-sprite();
+				float:left;
+				margin-top:13px;
+				margin-left:5px;
+				margin-right:5px;
+			}
+			&.names::before{
+				.svg-close();
+			}
+			&.password::before{
+				.svg-close();
+			}
+			&.email::before{
+				.svg-close();
+			}
+			&.userlevels::before{
+				.svg-close();
+			}
+			input,select{
+				border:none;
+				background-color: transparent;
+				padding-right: 5px;
+				line-height: 40px;
+				height: 40px;
+				width:calc(~"100% - 30px");
+				//-webkit-box-shadow: 0 0 0px 1000px white inset;//removes yellow autofill in chrome
+			}
+		}
+		.form_object.buttonObject{
+			border:none;
+		}
+		.logininputs{//border round login group of elements
+			border:0.1em solid #999;
+			margin-bottom:20px;
+		}
+	}
+}
+.registerpage.minimal{
+	.wrapper{
+		margin-top: 30px;
+		top: 0px;
+	}
+}
+@media only screen and (max-width: 900px) {//tablet
+
+}
+@media only screen and (max-width: 450px) {//phone
+	.loginpage.minimal,.registerpage.minimal{
+		.wrapper{
+			width:100%;
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			margin-top: 0px;
+			margin-left: 0px;
+			padding:10px;
+		}
+	}
+}

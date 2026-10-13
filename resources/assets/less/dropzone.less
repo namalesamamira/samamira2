@@ -1,0 +1,62 @@
+// We will load the original dropzone css, but only ovveride what we need here
+
+.dropzone{
+	border:1px dashed @mainBrand;
+	&.dz-drag-hover{
+		border-style:solid;
+	}
+	.dz-preview{
+		position:relative;
+		margin:5px;
+		&:hover{
+			.dz-image img {
+                .transition(all, 0.2s, ease-in);
+                transform: scale(1.05, 1.05);
+                filter: blur(0px);
+            }
+		}
+		&.dz-file-preview .dz-details{
+			opacity:1
+		}
+		&.dz-image-preview{
+			.dz-details{
+				.opacity(0);
+			}
+			&:hover{
+				.dz-details{
+					.opacity(0);
+				}
+			}
+		}
+		.dz-remove{
+			display:block;
+			cursor:pointer;
+			border:none;
+			position:absolute;
+			top:0;
+			right:0;
+			z-index: 700;
+			padding:0px;
+			overflow:hidden;
+			width:23px;
+			height:23px;
+			&::before{
+				content:"";
+				.svg-sprite();
+				.svg-close();
+				overflow:hidden;
+			}
+		}
+		.dz-image{
+			overflow:hidden;
+			border-radius: 5px;
+            width: 120px;
+            height: 120px;
+			img{
+				display:block;
+                width: 120px;
+                height: 120px;
+			}
+		}
+	}
+}
